@@ -1,0 +1,303 @@
+
+
+
+
+/* Let's get this party started */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.637); 
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: rgba(53, 53, 53, 0.7); 
+  -webkit-box-shadow: inset 0 0 6px rgba(53, 52, 52, 0.781); 
+}
+::-webkit-scrollbar-thumb:window-inactive {
+background: rgba(255, 255, 255, 0.4); 
+}
+
+a {
+  color:#222;
+  -webkit-transition: 0.2s color;
+  transition: 0.2s color;
+  text-decoration: none;
+  background-color: transparent;
+  display:inline-block;
+  font-weight: 400;
+  list-style: none;
+}
+
+.teste{
+    background:rgb(255, 255, 255);
+    width:100%;
+    text-align: center;
+    color:#000;
+  }
+
+  .noticias{
+    background: #ff6000 none repeat scroll 0 0;
+    color: #fff;
+    display: block;
+    float: left;
+    font-size: 14px;
+    font-weight: 600;
+    margin-left: -500px;
+    padding: 8px 6px 9px 500px;
+    position: relative;
+    width:650px;
+    text-align: end;
+    /*font-family: Roboto, sans-serif;*/
+  }
+
+.noticias::after{
+  border-left: 16px solid #ff6000;
+  border-top: 41px solid rgba(0, 0, 0, 0);
+  border-bottom: 20px solid rgba(0, 0, 0, 0);
+  content: "";
+  display: inline;
+  position: absolute;
+  right: -16px;
+  bottom: 0;
+}
+
+body{
+  background: rgb(233,233,233);
+}
+
+.top-noticias{
+  background-color: #179bd7;
+  clear: both;
+  float: left;
+  width: 100%;
+  height: 38px;
+}
+
+
+.infocabecalho{
+  display: flex;
+  align-items: center;
+  float: right;
+  font-size: 20px;
+  color:#fff;
+  margin-top: 20px;
+  margin-right: -300px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.bairro{
+
+  font-size: 18px;
+  margin-left: 45px;
+  margin-top: -10px;
+ text-decoration: none;
+ font-family: 'Montserrat', sans-serif;
+}
+
+
+
+.telefone{
+  font-family: 'Montserrat', sans-serif;
+  width: 250px;
+  align-items: center;
+}
+
+
+.wpp{
+  list-style: none;
+  color:#cccccc;
+  font-size: 18px;
+}
+
+.logo img{
+  margin-top: 10px;
+  float:left;
+  vertical-align: middle;
+  width:85px;
+  margin-left:-30px;
+}
+
+.texto-logo{
+  margin-top: 25px;
+  margin-left:25px;
+  float:left;
+  vertical-align: middle;
+  font-family: 'Tahoma', serif;
+  color: #fff;
+  font-size: 30px;
+}
+
+.objectImage {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.objectImage2 {
+  /* width: 100%; */
+  /* height: 100%; */
+  object-fit: cover;
+  object-position: center;
+}
+
+
+
+.pesquisar{
+  border:transparent;
+  background: transparent;
+}
+
+.btn-img{
+  border: transparent;
+  background: transparent;
+  color: white;
+  padding: 0px;
+  text-decoration: none;
+  vertical-align: middle;
+}
+
+
+.pe{
+    background-color: #253b80;
+    border-top: 1px solid #dce8f1;
+    padding: 25px;
+    text-align: center;
+    color:#FFF;
+    width: 100%;
+  }
+
+.end-noticias{
+
+  text-align: end;
+}
+
+  .end-noticias li{
+    text-align: end;
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+    display: inline-block;
+    padding: 7px 8px;
+    font-size: inherit;
+    text-decoration: none;
+    color:#000;
+  }
+
+.spanzinho{
+  color:rgb(107, 107, 107);
+}
+
+.spanzinho:hover{
+  color: #fff;
+}
+
+
+
+.fa-whatsapp{
+  color:#44ff00;
+}
+
+.homezinho{
+  font-size: 42px;
+  display: flex;
+  float:left;
+  padding: 0px 10px 10px 10px;
+
+}
+
+.fonezinho{
+  font-size: 42px;
+
+ 
+  padding: 0px 10px 0px 10px;
+
+}
+
+.endereco {
+  color:#fff;
+}
+
+.endereco:hover{
+  color:#ff6000;
+}
+ ul{
+  padding-left: 0px;
+}
+
+
+
+.baguiembaixo{
+  color:#000;
+}
+
+
+.formaralho{
+  margin: 0px;
+}
+
+.fa-search{
+  margin-left: 10px;
+  padding: 10px 20px 10px 0px;
+}
+
+.topo{
+  padding:0px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 25px;
+}
+
+.pnc{
+  padding:20px;
+}
+
+.end-noticias li a:hover{
+  color:#fff;
+}
+
+nav-link{
+  padding: 1rem 1rem 0.5rem 1rem;
+}
+
+nav-item:hover{
+  color:#ff6000;
+}
+
+.foneloko{
+  font-size: 42px;
+  display: flex;
+  float:left;
+  padding: 8px 10px 10px 10px;
+}
+
+
+.btnsearch{
+  margin-top: 5px;
+  margin-left: -10px;
+}
+
+
+.control-carousel-arrows{
+  color:black;
+  font-size:30px;
+}
+
+
+.logar{
+  border-left: 1px solid lightgrey;
+  border-right: 1px solid lightgrey;
+  border-radius:10px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+
+}
+
+
+.postnotic{
+  display: inline-block;
+}
