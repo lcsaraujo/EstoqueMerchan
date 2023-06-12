@@ -69,16 +69,19 @@
             <div class="span12">	      		
 	      		<div class="widget widget-table action-table">
             <div class="widget-header"> <i class="icon-th-list"></i>
-              <h3>Visualizar Usuários</h3>
+              <h3>Visualizar Fornecedores</h3>
+				<form action="home.php?acao=ver-fornecedores" method="post" enctype="multipart/form-data" class="navbar-search pull-right">
+					<input type="text" class="search-query" name="palavra-busca" placeholder="Pesquisar..." style="margin-bottom:10px; border:1px solid black;">
+				</form>
             </div>
             <!-- /widget-header -->
             <div class="widget-content">
               <table class="table table-striped table-bordered">
                 <thead>
                   <tr>
-                    <th> Nº</th>
-                    <th> nomefornecedor </th>
-                    <th class="td-actions"> </th>
+                    <th class=""> Codigo</th>
+                    <th> Nome</th>
+                    <th class="td-actions">Editar/Remover</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -111,7 +114,7 @@ $inicio = ($pg*$quantidade) - $quantidade;
 
 if(isset($_POST['palavra-busca'])){
 	$busca = addslashes($_POST['palavra-busca']);
-	$select = "SELECT * from fornecedores WHERE titulo LIKE '%$busca%' ORDER BY id DESC LIMIT $inicio, $quantidade";	
+	$select = "SELECT * from fornecedores WHERE nomefornecedor LIKE '%$busca%' ORDER BY id DESC LIMIT $inicio, $quantidade";	
 }else{
 	$select = "SELECT * from fornecedores ORDER BY id DESC LIMIT $inicio, $quantidade";
 }
@@ -129,8 +132,7 @@ $contagem =$inicio + 1;
                   <tr>
                   	<td><?php echo $mostra->id;?></td>
                     <td> <?php echo $mostra->nomefornecedor;?> </td>
-                    <td href="home.php?acao=edt-fornecedores&id=<?php echo $mostra->id;?>" class="btn btn-small btn-success"><i class="btn-icon-only icon-edit"> </i></a>
-                    
+                    <td class="td-actions"><a href="home.php?acao=edt-fornecedores&id=<?php echo $mostra->id;?>" class="btn btn-small btn-success"><i class="btn-icon-only icon-edit"> </i></a>
                     <a href="home.php?acao=ver-fornecedores&pg=<?php echo $pg;?>&delete=<?php echo $mostra->id;?>" class="btn btn-danger btn-small"  onClick="return confirm('Deseja realmente excluir o fornecedor?')"><i class="btn-icon-only icon-remove"> </i></a></td>
                   </tr>
 <?php
@@ -176,7 +178,7 @@ $contagem =$inicio + 1;
 <?php
 if(isset($_POST['palavra-busca'])){
 	$busca = addslashes($_POST['palavra-busca']);
-	$sql = "SELECT * from fornecedores WHERE titulo LIKE '%$busca%'";	
+	$sql = "SELECT * from fornecedores WHERE nomefornecedor LIKE '%$busca%'";	
 }else{
 	$sql = "SELECT * from fornecedores";
 }

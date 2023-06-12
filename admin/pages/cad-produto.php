@@ -24,8 +24,8 @@ jQuery(function($){
 			$descricao 			= trim(strip_tags($_POST['descricao']));
 			$quantidade 		= trim(strip_tags($_POST['quantidade']));
 			$tipo 				= trim(strip_tags($_POST['tipo']));
-			$nomefornecedor	= trim(strip_tags($_POST['nomefornecedor']));
-			$data 				= trim(strip_tags($_POST['data']));
+			$nomefornecedor		= trim(strip_tags($_POST['nomefornecedor']));
+			$data 			= trim(strip_tags($_POST['data']));
 			
 			
 			$insert = "INSERT into produtos (codproduto, descricao, quantidade, tipo, nomefornecedor, data ) VALUES (:codproduto, :descricao, :quantidade, :tipo, :nomefornecedor, :data)";
@@ -117,13 +117,13 @@ jQuery(function($){
 										<div class="control-group">											
 											<label class="control-label" for="firstname">Data</label>
 											<div class="controls">
-												<input type="text" class="span2" id="date" value="<?php $data = date("d,m,Y"); echo "$data"; ?>" name="data" disabled>
+												<input type="text" class="span2" id="date" value="<?php $data = date("d,m,Y"); echo "$data"; ?>" name="data">
 											</div> <!-- /controls -->				
 										</div> <!-- /control-group -->
-                        
+										
                         				<div class="form-actions">
-											<input type="submit" name="cadastrar" class="btn btn-primary" value="Salvar">
-											<input type="reset" class="btn" value="Cancelar">
+											<input type="reset" onclick="volta()" class="btn btn-danger" value="Cancelar">
+											<input type="submit" name="cadastrar" class="btn btn-success" value="Salvar">
 										</div> <!-- /form-actions -->
                   				</form>
                         
@@ -148,3 +148,9 @@ jQuery(function($){
   <!-- /main-inner --> 
 </div>
 <!-- /main -->
+
+<script>
+    function volta(){
+        window.history.back();
+    }
+</script>

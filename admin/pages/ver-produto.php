@@ -6,18 +6,13 @@
 <div class="span12">     
 <?php
 
-	if($nivelLogado ==0){
-			header("Location: home.php");exit;
-		}
 
 	//excluir
 	if(isset($_GET['delete'])){
 		$id_delete = $_GET['delete'];
 		
 		
-		if($nivelLogado ==1){
 		
-		// seleciona a imagem
 		$seleciona = "SELECT * from produtos WHERE id= :id_delete";
 		try{
 			$result = $conexao->prepare($seleciona);	
@@ -54,12 +49,6 @@
 			}
 			
 		}catch (PDOWException $erro){ echo $erro;}
-	}else{
-		echo '<div class="alert alert-danger">
-                      <button type="button" class="close" data-dismiss="alert">×</button>
-                      <strong>Erro!</strong> Seu nível de usuário não permite a exclusão de registro.
-                </div>';	
-	}
 			
 	}
 
@@ -72,8 +61,12 @@
             <div class="span12">	      		
 	      		<div class="widget widget-table action-table">
             <div class="widget-header"> <i class="icon-th-list"></i>
-              <h3>Visualizar Posts</h3>
+              <h3 class="text-slate-400 hover:text-sky-400">Visualizar Produtos</h3>
+			<form action="home.php?acao=ver-produto" method="post" enctype="multipart/form-data" class="pull-right">
+          		<input type="search" class="search-query" name="palavra-busca" placeholder="Pesquisar..." >
+        	</form>
             </div>
+
             <!-- /widget-header -->
             <div class="widget-content">
               <table class="table table-striped table-bordered">
@@ -85,7 +78,10 @@
                     <th> Tipo</th>
 					<th> Data Cadastro </th>
 					<th> Fornecedor </th>
+					<?php
+					if($nivelLogado ==1){ ?>
                     <th class="td-actions">Editar/Remover </th>
+					<?php } ?>
                   </tr>
                 </thead>
                 <tbody>
@@ -100,7 +96,7 @@ if(empty($_GET['pg'])){}
 	if(!is_numeric($pg)){
 		
 		echo '<script language= "JavaScript">
-						location.href="home.php?acao=ver-postagens";
+						location.href="home.php?acao=ver-produto";
 			</script>';
 	}
 	
@@ -120,7 +116,7 @@ if(empty($_GET['pg'])){}
 	
 	if(isset($_POST['palavra-busca'])){
 		$busca = addslashes($_POST['palavra-busca']);
-		$select = "SELECT * from produtos WHERE titulo LIKE '%$busca%' ORDER BY id DESC LIMIT $inicio, $quantidade";	
+		$select = "SELECT * from produtos WHERE descricao LIKE '%$busca%' ORDER BY id DESC LIMIT $inicio, $quantidade";	
 	}else{
 		$select = "SELECT * from produtos ORDER BY id DESC LIMIT $inicio, $quantidade";
 	}
@@ -139,12 +135,15 @@ if(empty($_GET['pg'])){}
                   	<td><?php echo $mostra->codproduto;?></td>
                     <td> <?php echo $mostra->descricao;?> </td>
                     <td> <?php echo $mostra->quantidade;?> </td>
-                    <td> <?php echo limitarTexto($mostra->descricao, $limite=200)?> </td>
+                    <td> <?php echo $mostra->tipo;?></td>
 					<td> <?php echo $mostra->data;?> </td>
 					<td> <?php echo $mostra->nomefornecedor;?> </td>
+					<?php
+					if($nivelLogado ==1){ ?>
                     <td class="td-actions"><a href="home.php?acao=editar-produto&id=<?php echo $mostra->id;?>" class="btn btn-small btn-success"><i class="btn-icon-only icon-edit"> </i></a>
                     <a href="home.php?delete=<?php echo $mostra->id;?>" class="btn btn-danger btn-small" onClick="return confirm('Deseja realmente excluir o post?')"><i class="btn-icon-only icon-remove"> </i></a></td>
-                  </tr>
+					<?php } ?>
+				  </tr>
 <?php
 }				
 			}else{
@@ -188,7 +187,7 @@ if(empty($_GET['pg'])){}
 <?php
 if(isset($_POST['palavra-busca'])){
 	$busca = addslashes($_POST['palavra-busca']);
-	$sql = "SELECT * from produtos WHERE titulo LIKE '%$busca%'";	
+	$sql = "SELECT * from produtos WHERE descricao LIKE '%$busca%'";	
 }else{
 	$sql = "SELECT * from produtos";
 }
@@ -287,8 +286,3 @@ if(isset($_POST['palavra-busca'])){
   <!-- /main-inner --> 
 </div>
 <!-- /main -->
-
-<script type="text/javascript" src="editor/nicEdit.js"></script>
-<script type="text/javascript">
-	bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
-</script>

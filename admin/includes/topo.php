@@ -1,33 +1,50 @@
+<style>
+	img{
+    width: 100px;
+  }
+  .logo{
+    align-items: center !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+</style>
+
 <div class="navbar navbar-fixed-top">
+
   <div class="navbar-inner">
-    <div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span
-                    class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span> </a><a class="brand" href="home.php">CDE Merchan - Painel <?php if($nivelLogado == 0){echo "do Usuario";}else if($nivelLogado == 1){echo "Admistrativo";}?></a>
+
+    <div class="container">
+    <div class="logo">
+			<img src="img/logo.png"></img>
+		</div>
+    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> 
+    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span> </a><a class="brand" href="home.php">CDE Merchan - Painel <?php if($nivelLogado == 0){echo "do Usuario";}else if($nivelLogado == 1){echo "Admistrativo";}?></a>
+
       <div class="nav-collapse">
         <ul class="nav pull-right">
+        <?php if($nivelLogado==1){?>
           <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
                             class="icon-cog"></i> Opções <b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li><a href="javascript:;">Adicionar Usuários</a></li>
-              <li><a href="javascript:;">Site em Manutenção</a></li>
+              <li><a href="home.php?acao=cad-usuarios.php">Cadastrar Usuários</a></li>
+              <li><a href="javascript:;">Alterar senha</a></li>
             </ul>
           </li>
+          <?php }?>
           <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
-                            class="icon-user"></i> <?php echo $nomeLogado;?> <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="javascript:;">Perfil</a></li>
+                            class="icon-user"></i> <?php echo $nomeLogado;?></b></a>
               <li><a href="?sair" onClick="return confirm('Deseja realmente sair do Sistema?')">Sair</a></li>
-            </ul>
           </li>
         </ul>
 
         <?php if($nivelLogado==1){?>
-        <form action="home.php?acao=ver-produtos" method="post" enctype="multipart/form-data" class="navbar-search pull-right">
+        <form action="home.php?acao=ver-produto" method="post" enctype="multipart/form-data" class="navbar-search pull-right">
           <input type="text" class="search-query" name="palavra-busca" placeholder="pesquisar">
         </form>
         <?php }?>
 
         <?php if($nivelLogado==0){?>
-        <form action="home.php?acao=ver-atividades" method="post" enctype="multipart/form-data" class="navbar-search pull-right">
+        <form action="home.php?acao=ver-produto" method="post" enctype="multipart/form-data" class="navbar-search pull-right">
           <input type="text" class="search-query" name="palavra-busca" placeholder="pesquisar">
         </form>
         <?php }?>
@@ -49,14 +66,19 @@
 
         
         <?php if($nivelLogado ==1){?>
-        <li class="<?php if($acao =="ver-produto" || ($acao =="cad-produto")){echo "active";}?> dropdown"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-file"></i><span>Produtos</span> <b class="caret"></b></a>
+        <li class="<?php if($acao =="ver-produto" || ($acao =="cad-produto")){echo "active";}?> dropdown"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa-solid fa-shop"></i><span>Produtos</span> <b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li><a href="home.php?acao=ver-produto">Visualizar</a></li>
             <li><a href="home.php?acao=cad-produto">Cadastrar</a></li>
           </ul>
         </li>
-        
-        <li class="dropdown"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-user"></i><span>Fornecedores</span> <b class="caret"></b></a>
+        <li class="<?php if($acao =="ver-pedidos" || ($acao =="cad-pedidos")){echo "active";}?> dropdown"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa-solid fa-box"></i><span>Pedidos</span> <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="home.php?acao=ver-pedidos">Visualizar</a></li>
+            <li><a href="home.php?acao=cad-pedidos">Cadastrar</a></li>
+          </ul>
+        </li>
+        <li class="dropdown"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa-solid fa-truck-field"></i><span>Fornecedores</span> <b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li><a href="home.php?acao=ver-fornecedores">Visualizar</a></li>
             <li><a href="home.php?acao=cad-fornecedores">Cadastrar</a></li>
@@ -66,16 +88,17 @@
        
       <?php if($nivelLogado ==0){?>
         
-        <li class="dropdown"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-gamepad"></i><span>Atividades</span> <b class="caret"></b></a>
+        <!--<li class="dropdown"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa-solid fa-box"></i><span>Pedidos</span> <b class="caret"></b></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Lições</a></li>
-            <li><a href="#">Visualizar</a></li>
-            <li><a href="#">Perfil</a></li>
+            <li><a href="home.php?acao=cad-novopedido">Novo Pedido</a></li>
+            <li><a href="home.php?acao=ver-pedido">Acompanhar Pedido</a></li>
+          </ul>
+        </li>-->
+        <li class="<?php if($acao =="ver-produto"){echo "active";}?> dropdown"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa-solid fa-shop"></i><span>Produtos</span> <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="home.php?acao=ver-produto">Visualizar</a></li>
           </ul>
         </li>
-        <li><a href="#"><i class="icon-globe"></i><span>Outros</span> </a></li>
-        <li></li>
-      </ul>
       <?php }?>
     </div>
     <!-- /container --> 

@@ -34,7 +34,7 @@ if(!isset($_SESSION['usuariowva']) && (!isset($_SESSION['senhawva']))){
 ?>
 
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-br">
 <head>
 <meta charset="utf-8">
 <title>Merchan - Dashboard</title>
@@ -46,11 +46,14 @@ if(!isset($_SESSION['usuariowva']) && (!isset($_SESSION['senhawva']))){
         rel="stylesheet">
 <link href="css/font-awesome.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
-<link href="css/w3.css" rel="stylesheet">
+<!--<link href="css/output.css" rel="stylesheet">-->
 <link href="css/pages/dashboard.css" rel="stylesheet">
+<script src="https://kit.fontawesome.com/6f555f06ed.js" crossorigin="anonymous"></script>
+
 <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
 <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 <script src="js/jquery-1.7.2.min.js"></script>     
+
 <script src="js/jquery.maskedinput.js" type="text/javascript"></script>

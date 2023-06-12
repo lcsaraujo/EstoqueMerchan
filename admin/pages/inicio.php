@@ -25,7 +25,7 @@
             <div class="span12">	      		
 	      		<div id="target-1" class="widget">	      			
 	      			<div class="widget-content">	      				
-			      		<h1><strong>Seja Bem vindo <?php echo $nomeLogado ?></strong> </h1>			      		
+			      		<h3 class="text-3xl font-bold">Seja Bem vindo <?php echo $nomeLogado ?></h3>			      		
 			      		<p> 
 		      		</div> <!-- /widget-content -->
 	      		</div> <!-- /widget -->
