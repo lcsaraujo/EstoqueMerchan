@@ -7,7 +7,7 @@ if(isset($_SESSION['usuariowva']) && (isset($_SESSION['senhawva']))){
 	include("admin/conexao/conecta.php");
 ?>
 <!DOCTYPE html>
-<html lang="br">
+<html data-theme:"dark" lang="br">
   
 <head>
     <meta charset="utf-8">
@@ -22,14 +22,18 @@ if(isset($_SESSION['usuariowva']) && (isset($_SESSION['senhawva']))){
 <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet"> 
 <link href="css/style.css" rel="stylesheet" type="text/css">-->
 <!--<link href="css/pages/signin.css" rel="stylesheet" type="text/css">-->
-<link href="css/output.css" rel="stylesheet" type="text/css">
+<!--<link href="css/output.css" rel="stylesheet" type="text/css">-->
+<link href="https://cdn.jsdelivr.net/npm/daisyui@3.1.0/dist/full.css" rel="stylesheet" type="text/css" />
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://kit.fontawesome.com/6f555f06ed.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
+<script src="admin/js/tailwind.config.js"></script>
+
 </head>
 
-<body style="background-image: linear-gradient(to right, #536976, #292E49" class="flex items-align justify-center">
+<body  class="flex items-align justify-center overflow-hidden">
 
-	<div class="navbar navbar-fixed-top ">
+	<div class="navbar-fixed-top ">
 	
 	<div class="navbar-inner">
 		
@@ -54,19 +58,16 @@ if(isset($_SESSION['usuariowva']) && (isset($_SESSION['senhawva']))){
 		justify-content: center;
 	}
 </style>
-<div class="flex justify-center pt-48 items-end container ">
-
-	<div class="mx-auto w-full max-w-sm shadow shadow-3xl backdrop-blur-md bg-white/30 block flex flex-auto rounded drop-shadow-2xl container">
-	
-		<form class="m-4 shadow-m-2xl text-center w-full" action="#" method="post" enctype="multipart/form-data">
-		<div class="logo">
-			<img src="admin/img/logo.png"></img>
+<div class="flex flex-auto justify-center items-center block container">
+		<form class="text-center h-screen w-screen pt-40" action="#" method="post" enctype="multipart/form-data">
+		<div class="flex flex-auto items-center mx-auto justify-center relative h-24 w-32">
+			<img class="absolute top-0 right-0" src="admin/img/logo.png"></img>
 		</div>
 		
 		<div class=" font-bold aliasing font-sans bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-yellow-600 ">
 
-				<h1 class="flex flex-auto items-center justify-center text-3xl uppercase ">controle de estoque</h1>
-				<h1 class="flex flex-auto items-center justify-center text-3xl  mb-5 uppercase">merchan matriz</h1>
+				<h1 class="flex flex-auto items-center justify-center text-xl uppercase prose-h1">controle de estoque</h1>
+				<h1 class="flex flex-auto items-center justify-center text-3xl   uppercase prose">merchan matriz</h1>
 			</div>
 		 
 		
@@ -77,12 +78,9 @@ if(isset($_SESSION['usuariowva']) && (isset($_SESSION['senhawva']))){
 			
 				$acao = $_GET['acao'];
 				if($acao=='negado'){
-					echo '				<div id="toast-warning" class="flex items-center w-full p-2 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800" role="alert">
-					<div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-orange-500 bg-orange-100 rounded-lg dark:bg-orange-700 dark:text-orange-200">
-						<svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg>
-						<span class="sr-only">Warning icon</span>
-					</div>
-					<div class="ml-3 text-sm font-normal"><strong>Erro ao acessar !</strong> Você precisa estar logar para acessar o sistema..</div>
+					echo '<div class="alert alert-error flex flex-auto justify-center mx-auto items-center w-80 py-2">
+					<svg xmlns="http://www.w3.org/2000/svg" class=" stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+					<span>Erro! Você precisa estar logado para acessar o sistema.</span>
 				</div>';	
 				}
 			}
@@ -111,23 +109,17 @@ if(isset($_SESSION['usuariowva']) && (isset($_SESSION['senhawva']))){
 				$_SESSION['usuariowva'] = $usuario;
 				$_SESSION['senhawva'] = $senha;
 				
-				echo '<div id="toast-success" class="flex items-center w-full p-4 mb-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800" role="alert">
-				<div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg dark:bg-green-800 dark:text-green-200">
-					<svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-					<span class="sr-only">Check icon</span>
-				</div>
-				<div class="ml-3 text-sm font-normal"><strong>Logado com sucesso !</strong> Redirecionando para o sistema.</div>
-			</div>';
+				echo '<div class="alert alert-success flex flex-auto justify-center mx-auto items-center w-80 py-2">
+						<svg xmlns="http://www.w3.org/2000/svg" class=" stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+						<span>Logado com sucesso!</span>
+					  </div>';
 				
 				header("Refresh: 1, admin/home.php?acao=welcome");
 			}else{
 				echo '
-				<div id="toast-warning" class="flex items-center w-full p-2 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800" role="alert">
-					<div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-orange-500 bg-orange-100 rounded-lg dark:bg-orange-700 dark:text-orange-200">
-						<svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg>
-						<span class="sr-only">Warning icon</span>
-					</div>
-					<div class="ml-3 text-sm font-normal"><strong>Erro !</strong> Usuario ou senha incorretos.</div>
+				<div class="alert alert-error flex flex-auto justify-center mx-auto items-center w-80 py-2">
+					<svg xmlns="http://www.w3.org/2000/svg" class=" stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+					<span>Erro! Usuario ou senha incorretos.</span>
 				</div>';
 			}
 			
@@ -143,20 +135,20 @@ if(isset($_SESSION['usuariowva']) && (isset($_SESSION['senhawva']))){
 			<!--<span class="inline-block ps-12 px-32 border bg-red-400 "></span>-->
 			<div class="py-6">
 			<span>Usuario</span>
-				<div class="mb-4 flex flex-auto justify-center w-full">
+				<div class="mb-4 flex flex-auto justify-center ">
 				
-					<input type="text" id="username" name="usuario" value="" class="bg-white/0 hover:bg-white/0 sm:px-6 mt-0 block rounded text-center apperance-none px-0.5 w-full text-red-700 border-0 border-b-2 border-red-400 hover:border-b-4 focus:border-red-600 focus:outline-none" />
+					<input type="text" id="username" name="usuario" value="" class="bg-white/0 hover:bg-white/0 sm:px-6 mt-0 block rounded text-center apperance-none px-0.5  text-red-700 border-0 border-b-2 border-red-400 hover:border-b-4 focus:border-red-600 focus:outline-none" />
 				</div> <!-- /field -->
 				<span>Senha</span>
-				<div class="mb-4 flex flex-auto justify-center w-full">
-					<input type="password" id="password" name="senha" value="" class="bg-white/0 sm:px-6 mt-0 block rounded text-center apperance-none px-0.5 w-full text-red-700 border-0 border-b-2 border-red-400 hover:border-b-4 focus:border-red-600 focus:outline-none"/>
+				<div class="mb-4 flex flex-auto justify-center">
+					<input type="password" id="password" name="senha" value="" class="bg-white/0 sm:px-6 mt-0 block rounded text-center apperance-none px-0.5  text-red-700 border-0 border-b-2 border-red-400 hover:border-b-4 focus:border-red-600 focus:outline-none"/>
 				</div> <!-- /password -->
 				
 			</div> <!-- /login-fields -->
 			
 			<div class="w-full flex flex-auto items-center justify-center ">
 									
-				<button type="submit" name="logar" class="py-2 px-5 text-white bg-red-600/40 hover:bg-red-700 font-sans hover:font-semibold rounded-full  ">Entrar no Sistema</button>
+				<button type="submit" name="logar" class="mb-32 py-2 px-5 text-white bg-red-600/40 hover:bg-red-700 font-sans hover:font-semibold rounded-full  ">Entrar no Sistema</button>
 				
 			</div> <!-- .actions -->
 		</form>

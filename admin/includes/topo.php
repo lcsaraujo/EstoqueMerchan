@@ -9,13 +9,13 @@
   }
 </style>
 
-<div class="navbar navbar-fixed-top">
+<div class="navbar navbar-fixed-top ">
 
-  <div class="navbar-inner">
+  <div class="navbar-inner ">
 
     <div class="container">
-    <div class="logo">
-			<img src="img/logo.png"></img>
+    <div class="logo ">
+			<img src="img/logo.png" class="align-self-end"></img>
 		</div>
     <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> 
     <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span> </a><a class="brand" href="home.php">CDE Merchan - Painel <?php if($nivelLogado == 0){echo "do Usuario";}else if($nivelLogado == 1){echo "Admistrativo";}?></a>
@@ -72,12 +72,12 @@
             <li><a href="home.php?acao=cad-produto">Cadastrar</a></li>
           </ul>
         </li>
-        <li class="<?php if($acao =="ver-pedidos" || ($acao =="cad-pedidos")){echo "active";}?> dropdown"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa-solid fa-box"></i><span>Pedidos</span> <b class="caret"></b></a>
+        <!--<li class="dropdown"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa-solid fa-box"></i><span>Pedidos</span> <b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li><a href="home.php?acao=ver-pedidos">Visualizar</a></li>
             <li><a href="home.php?acao=cad-pedidos">Cadastrar</a></li>
           </ul>
-        </li>
+        </li>-->
         <li class="dropdown"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa-solid fa-truck-field"></i><span>Fornecedores</span> <b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li><a href="home.php?acao=ver-fornecedores">Visualizar</a></li>

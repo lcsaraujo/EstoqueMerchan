@@ -2,7 +2,7 @@
 ob_start();
 session_start();
 if(!isset($_SESSION['usuariowva']) && (!isset($_SESSION['senhawva']))){
-	header("Location: index.php?acao=negado");exit;
+	header("Location: ../index.php?acao=negado");exit;
 }
 	include("conexao/conecta.php");
 	include("includes/logout.php");
@@ -40,20 +40,22 @@ if(!isset($_SESSION['usuariowva']) && (!isset($_SESSION['senhawva']))){
 <title>Merchan - Dashboard</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+<!--<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.min.css" rel="stylesheet">-->
 <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600"
         rel="stylesheet">
 <link href="css/font-awesome.css" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet">
+<!--<link href="css/style.css" rel="stylesheet">-->
 <!--<link href="css/output.css" rel="stylesheet">-->
-<link href="css/pages/dashboard.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/daisyui@3.1.0/dist/full.css" rel="stylesheet" type="text/css" />
+<!--<link href="css/pages/dashboard.css" rel="stylesheet">-->
 <script src="https://kit.fontawesome.com/6f555f06ed.js" crossorigin="anonymous"></script>
 
 <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
 <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-<script src="js/jquery-1.7.2.min.js"></script>     
+<!--<script src="js/jquery-1.7.2.min.js"></script>-->
 
-<script src="js/jquery.maskedinput.js" type="text/javascript"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+<!--<script src="js/jquery.maskedinput.js" type="text/javascript"></script>-->
