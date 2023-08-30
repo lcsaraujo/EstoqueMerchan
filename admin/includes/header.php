@@ -30,7 +30,7 @@ try {
         }
     }
 
-} catch (PDOWException $erro) {
+} catch (PDOException $erro) {
     echo $erro;
 }
 
@@ -78,6 +78,15 @@ try {
                 <li ><a onClick="my_modal_1.showModal()" class="text-xs">Sair</a></li>
             </ul>
         <?php }?>
+        <?php if($nivelLogado==0) {?>
+        <div class="dropdown dropdown-end p-6">
+          <label tabindex="0" class="p-2">
+            <i class="fa fa-bars"></i>
+          </label>
+            <ul class="menu menu-xs dropdown-content shadow bg-base-100 rounded-box " tabindex="0">
+                <li ><a onClick="my_modal_1.showModal()" class="text-xs">Sair</a></li>
+            </ul>
+        <?php }?>
 
         <!-- modal de saída de sistema -->
         <dialog id="my_modal_1" class="modal">
@@ -86,7 +95,7 @@ try {
                 <p class="py-4">Você deseja sair do sistema ?</p>
                 <div class="modal-action">
                     <a class="btn btn-primary w-24" href="?sair">Sair</a>
-                    <button class="btn btn-error w-24">Close</button>
+                    <button class="btn btn-error w-24">Voltar</button>
                 </div>
             </form>
         </dialog>

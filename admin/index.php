@@ -61,7 +61,7 @@ exit;
 		justify-content: center;
 	}
 </style>
-<div class="flex flex-auto justify-center items-center block">
+<div class="flex flex-auto justify-center items-center">
 		<form class="text-center h-screen w-screen pt-40" action="#" method="post" enctype="multipart/form-data">
 		<div class="flex flex-auto items-center mx-auto justify-center relative h-24 w-32">
 			<img class="absolute top-0 right-0" src="img/logo.png"></img>

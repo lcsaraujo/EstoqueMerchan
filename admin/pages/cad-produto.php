@@ -117,7 +117,7 @@ jQuery(function($){
 										<div class="control-group">											
 											<label class="control-label" for="firstname">Data</label>
 											<div class="controls">
-												<input type="text" class="span2" id="date" value="<?php $data = date("d,m,Y"); echo "$data"; ?>" name="data">
+												<input type="data" class="span2" id="date" value="<?php $data = date("d,m,Y"); echo "$data"; ?>" name="data">
 											</div> <!-- /controls -->				
 										</div> <!-- /control-group -->
 										
