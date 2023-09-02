@@ -47,6 +47,7 @@ try {
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">
 	<link href="css/font-awesome.css" rel="stylesheet">
 	<link href="https://cdn.jsdelivr.net/npm/daisyui@3.1.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link href="css/output.css" rel="stylesheet"
 
 	<!-- JS -->
 	<script src="https://kit.fontawesome.com/6f555f06ed.js" crossorigin="anonymous"></script>

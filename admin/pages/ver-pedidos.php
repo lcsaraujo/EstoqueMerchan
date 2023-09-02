@@ -50,10 +50,10 @@
 					}
 					
 					
-					}catch (PDOWException $erro){ echo $erro;}
+					}catch (PDOException $erro){ echo $erro;}
 			}
 			
-		}catch (PDOWException $erro){ echo $erro;}
+		}catch (PDOException $erro){ echo $erro;}
 	}else{
 		echo '<div class="alert alert-danger">
                       <button type="button" class="close" data-dismiss="alert">×</button>

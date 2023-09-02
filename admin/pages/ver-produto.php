@@ -45,10 +45,10 @@
 					}
 					
 					
-					}catch (PDOWException $erro){ echo $erro;}
+					}catch (PDOException $erro){ echo $erro;}
 			}
 			
-		}catch (PDOWException $erro){ echo $erro;}
+		}catch (PDOException $erro){ echo $erro;}
 			
 	}
 

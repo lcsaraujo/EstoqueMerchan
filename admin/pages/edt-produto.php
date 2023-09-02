@@ -40,7 +40,6 @@ jQuery(function($){
                                     $quantidade	 	= $mostra->quantidade;
                                     $tipo 			= $mostra->tipo;
                                     $nomefornecedor = $mostra->nomefornecedor;
-                                    $data 			= $mostra->data;
                                 }
                             } else {
                                 echo '<div class="alert alert-danger">
@@ -59,9 +58,8 @@ jQuery(function($){
                             $quantidade 		= trim(strip_tags($_POST['quantidade']));
                             $tipo 				= trim(strip_tags($_POST['tipo']));
                             $nomefornecedor		= trim(strip_tags($_POST['nomefornecedor']));
-                            $data 				= trim(strip_tags($_POST['data']));
 
-                            $update = "UPDATE produtos SET codproduto=:codproduto, descricao=:descricao, quantidade=:quantidade, tipo=:tipo, nomefornecedor=:nomefornecedor, data=:data WHERE id=:id";
+                            $update = "UPDATE produtos SET codproduto=:codproduto, descricao=:descricao, quantidade=:quantidade, tipo=:tipo, nomefornecedor=:nomefornecedor WHERE id=:id";
                             try {
                                 $result = $conexao->prepare($update);
                                 $result->bindParam(':id', $id, PDO::PARAM_INT);
@@ -70,7 +68,6 @@ jQuery(function($){
                                 $result->bindParam(':quantidade', $quantidade, PDO::PARAM_INT);
                                 $result->bindParam(':tipo', $tipo, PDO::PARAM_STR);
                                 $result->bindParam(':nomefornecedor', $nomefornecedor, PDO::PARAM_STR);
-                                $result->bindParam(':data', $data, PDO::PARAM_STR);
                                 $result->execute();
                                 $contar = $result->rowCount();
                                 if($contar>0) {
@@ -148,13 +145,6 @@ jQuery(function($){
 											</div> <!-- /controls -->				
 										</div> <!-- /control-group -->
 
-										<div class="control-group">											
-											<label class="control-label" for="firstname">Data</label>
-											<div class="controls">
-												<input type="text" class="span2" id="date" value="<?php $data = date("d,m,Y");
-												echo "$data"; ?>" name="data">
-											</div> <!-- /controls -->				
-										</div> <!-- /control-group -->
 										
                         				<div class="form-actions">
 											<input type="reset" onClick="volta()" class="btn btn-danger" value="Voltar">

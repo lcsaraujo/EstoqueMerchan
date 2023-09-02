@@ -1,3 +1,4 @@
 {
-    "phpserver.browser": "brave"
+    "phpserver.browser": "brave",
+    "liveServer.settings.multiRootWorkspaceName": "EstoqueMerchan"
 }
