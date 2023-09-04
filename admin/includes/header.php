@@ -54,7 +54,7 @@ try {
     <!-- JS -->
     <script src="js/style.js"></script>
     <script src="js/tailwind.config.js"></script>
-    <script src="https://kit.fontawesome.com/6f555f06ed.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://kit.fontawesome.com/6f555f06ed.js" crossorigin="anonymous"></script> -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
 
@@ -71,12 +71,14 @@ try {
         </div>
 
         <div class="navbar-end h-3 pe-4 ps-8">
-
+        <input type="checkbox" class="toggle" />
             <?php if ($nivelLogado == 1) { ?>
                 <div class="dropdown dropdown-end p-6">
+                
                     <label tabindex="0" class="p-2">
                         <i class="fa fa-bars"></i>
                     </label>
+                    
                     <ul class="menu menu-sm dropdown-content shadow bg-base-100 rounded-box w-100 px-8" style="z-index: 1;" tabindex="0">
                         <li class="w-100"><a class="text-xs w-100 inline" onClick="my_modal_2.showModal()">Cadastrar Usuários</a></li>
                         <li><a onClick="my_modal_1.showModal()" class="text-xs">Sair</a></li>
