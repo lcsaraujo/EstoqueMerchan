@@ -12,7 +12,7 @@
           <li class="dropdown dropdown-hover justify-center lg:m-0 dropdown-end  mx-12  hover:border-base-content "><a href="home.php?acao=ver-produto"><i class="fa-solid fa-shop focus:text-base-content"></i> <span class="hidden md:block lg:block font-sans uppercase focus:text-base-content">Produtos</span> <b class="caret"></b></a>
 
           </li>
-          <li class="dropdown dropdown-hover justify-center lg:m-0 dropdown-end  hover:border-base-content"><a href="home.php?acao=ver-fornecedores""> <i class="fa-solid fa-truck-field"></i><span class="hidden md:block lg:block font-sans uppercase">Fornecedores</span> <b class="caret"></b></a>
+          <li class="dropdown dropdown-hover justify-center lg:m-0 dropdown-end  hover:border-base-content"><a href="home.php?acao=ver-fornecedores"> <i class="fa-solid fa-truck-field"></i><span class="hidden md:block lg:block font-sans uppercase">Fornecedores</span> <b class="caret"></b></a>
 
           </li>
       </ul>    

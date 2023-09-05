@@ -71,7 +71,6 @@ try {
         </div>
 
         <div class="navbar-end h-3 pe-4 ps-8">
-        <input type="checkbox" class="toggle" />
             <?php if ($nivelLogado == 1) { ?>
                 <div class="dropdown dropdown-end p-6">
                 

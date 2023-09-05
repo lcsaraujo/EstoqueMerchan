@@ -60,11 +60,13 @@
 				<div class="font-semibold uppercase px-6 w-100">
 					<div class="widget widget-table action-table ">
 						<div class="w-100 h-100 join items-center flex flex-row"> <i class="fa fa-list p-4"></i><h3 class="text-xl">Visualizar Produtos</h3>
-
+						
+						</div>
+						<div class="w-100 text-end pb-5">
+							<a class="btn btn-primary w-30 h-4" href="home.php?acao=cad-produto">Cadastrar</a>
 						</div>
 						<form action="home.php?acao=ver-produto" method="post" enctype="multipart/form-data" class=" col-end-3 p-0 m-0 w-100 text-center sm:text-end">
-								<input type="search" class="focus:outline-none input-sm  border-s-2 border-y-2 pe-0 rounded-s-xl border-indigo-500 input-bordered join-item " name="palavra-busca" placeholder="Pesquisar...">
-								<button class="btn-sm btn-primary join-item rounded-e-xl ">Procurar</button>
+							<input type="search" class="focus:outline-none input-sm  border-s-2 border-y-2 pe-0 rounded-s-xl border-indigo-500 join-item " style="line-height: 0;" name="palavra-busca" placeholder="Pesquisar..."><button class="btn-sm btn-primary join-item rounded-e-xl ">Procurar</button>
 						</form>
 
 
