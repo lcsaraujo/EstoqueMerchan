@@ -68,9 +68,7 @@
 				<div class="font-semibold uppercase px-4 w-100">
 					<div class="widget widget-table action-table">
 					<div class="w-100 h-100 join items-center flex flex-row"> <i class="fa fa-list p-4"></i><h3 class="text-xl">Visualizar Fornecedores</h3></div>
-					<div class="w-100 text-end pb-5">
-						<a class="btn btn-primary w-30 h-4" href="home.php?acao=cad-fornecedores">Cadastrar</a>
-					</div>	
+
 					
 					<form action="home.php?acao=ver-fornecedores" method="post" enctype="multipart/form-data" class=" col-end-3 p-0 m-0 w-100 text-center sm:text-end">
 						<input type="search" class="focus:outline-none input-sm  border-s-2 border-y-2 pe-0 rounded-s-xl border-indigo-500 join-item " style="line-height: 0;" name="palavra-busca" placeholder="Pesquisar..."><button class="btn-sm btn-primary join-item rounded-e-xl ">Procurar</button>
@@ -81,9 +79,9 @@
 							<table class="table table-xs table-zebra border-collapse border border-base-300 text-center">
 								<thead>
 									<tr class="border border-slate-600">
-										<th class="border border-slate-600"> Codigo</th>
+										<th class="border border-slate-600 w-4"> Codigo</th>
 										<th class="border border-slate-600"> Nome</th>
-										<th class="td-actions">Editar/Remover</th>
+										<th class="td-actions w-4">Editar/Remover</th>
 									</tr>
 								</thead>
 								<tbody>
