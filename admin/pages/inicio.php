@@ -115,7 +115,7 @@ function saudacao($nomeLogado = '')
                                     <td class="border border-slate-600"> <?php echo $mostra->quantidade; ?> </td>
                                     <td class="border border-slate-600"> <?php echo $mostra->tipo; ?> </td>
                                     <td class="border border-slate-600"> <?php echo $mostra->data; ?> </td>
-                                    <td class="border border-slate-600"> <?php echo $mostra->nomefornecedor; ?> </td>
+                                    <td class="border border-slate-600"> <?php echo $mostra->fan_forn; ?> </td>
                                     <td class="border border-slate-600"><a href="home.php?acao=editar-produto&id=<?php echo $mostra->id; ?>" class="btn w-5 btn-primary"><i class="fa fa-edit p-0"> </i></a>
                                         <a href="home.php?delete=<?php echo $mostra->id; ?>" class="btn btn-error w-5" onClick="return confirm('Deseja realmente excluir ?')"><i class="fa fa-remove"> </i></a>
                                     </td>

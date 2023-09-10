@@ -17,10 +17,10 @@ include("admin/conexao/conecta.php");
 	<link rel="stylesheet" href="admin/css/style.css">
 	<link rel="stylesheet" href="admin/css/merchan.css">
 	<link rel="stylesheet" href="admin/css/output.css">
-	<link href="fontawesome/css/all.css" rel="stylesheet">
+	<link href="admin/fontawesome/css/all.css" rel="stylesheet">
 	<link href="admin/css/all.css" rel="stylesheet">
 	<link href="node_modules/daisyui/dist/full.css" rel="stylesheet">
-	<script src="admin/css/teste.js"></script>
+	
 	<script src="https://cdn.tailwindcss.com"></script>
 	<script src="https://kit.fontawesome.com/6f555f06ed.js" crossorigin="anonymous"></script>
 	<!-- <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script> -->
@@ -28,8 +28,8 @@ include("admin/conexao/conecta.php");
 	<script src="admin/js/style.js"></script>
 </head>
 
-<body>
-	<div class="flex flex-auto justify-center items-center h-full w-full sm:h-screen sm:w-screen ">
+<body class="w-100 h-100">
+	<div class="flex flex-auto justify-center items-center min-h-full min-w-full sm:h-screen sm:w-screen ">
 		<div class="bg-white w-96 h-auto shadow-md rounded-2xl">
 			<form class="text-center h-full w-full pt-8" action="#" method="post" enctype="multipart/form-data">
 
@@ -82,7 +82,7 @@ include("admin/conexao/conecta.php");
 							$_SESSION['usuariowva'] = $usuario;
 							$_SESSION['senhawva'] = $senha;
 
-							echo '<div class="alert alert-success flex flex-auto justify-center mx-auto items-center w-80 py-2">
+							echo '<div class="alert alert-sm font-bold alert-success flex flex-auto justify-center mx-auto items-center w-80 py-2">
 						<div class="waveform">
 							<div class="waveform__bar"></div>
 							<div class="waveform__bar"></div>
@@ -96,7 +96,7 @@ include("admin/conexao/conecta.php");
 							header("Refresh: 1, admin/home.php?acao=welcome");
 						} else {
 							echo '
-					<div class="alert alert-error flex flex-auto justify-center mx-auto items-center w-80 py-2">
+					<div class="alert alert-sm font-bold alert-error flex flex-auto justify-center mx-auto items-center w-80 py-2">
 						<svg xmlns="http://www.w3.org/2000/svg" class=" stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
 						<span>Erro! Usuario ou senha incorretos.</span>
 					</div>';

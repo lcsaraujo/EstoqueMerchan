@@ -20,14 +20,14 @@ jQuery(function($){
 			      		
                         <?php
 	  	if(isset($_POST['cadastrar'])){
-            $nomefornecedor 	    	= trim(strip_tags($_POST['nomefornecedor']));
+            $fan_forn 	    	= trim(strip_tags($_POST['fan_forn']));
 			
 					
-			$insert = "INSERT into fornecedores (nomefornecedor) VALUES (:nomefornecedor)";
+			$insert = "INSERT into fornecedores (fan_forn) VALUES (:fan_forn)";
 		
 		try{
 			$result = $conexao->prepare($insert);
-            $result->bindParam(':nomefornecedor', $nomefornecedor, PDO::PARAM_STR);
+            $result->bindParam(':fan_forn', $fan_forn, PDO::PARAM_STR);
 			$result->execute();
 			$contar = $result->rowCount();
 			if($contar>0){
@@ -56,7 +56,7 @@ jQuery(function($){
 										<div class="control-group">											
 											<label class="control-label" for="username">Nome Fornecedor</label>
 											<div class="controls">
-												<input type="text" class="span6 disabled" id="nomefornecedor" value="" name="nomefornecedor" required>
+												<input type="text" class="span6 disabled" id="fan_forn" value="" name="fan_forn" required>
 											</div> <!-- /controls -->				
 										</div> <!-- /control-group -->                   
                         				<div class="form-actions">

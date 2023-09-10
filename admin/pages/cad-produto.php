@@ -24,11 +24,11 @@ jQuery(function($){
 			$descricao 			= trim(strip_tags($_POST['descricao']));
 			$quantidade 		= trim(strip_tags($_POST['quantidade']));
 			$tipo 				= trim(strip_tags($_POST['tipo']));
-			$nomefornecedor		= trim(strip_tags($_POST['nomefornecedor']));
+			$fan_forn		= trim(strip_tags($_POST['fan_forn']));
 			$data 			= trim(strip_tags($_POST['data']));
 			
 			
-			$insert = "INSERT into produtos (codproduto, descricao, quantidade, tipo, nomefornecedor, data ) VALUES (:codproduto, :descricao, :quantidade, :tipo, :nomefornecedor, :data)";
+			$insert = "INSERT into produtos (codproduto, descricao, quantidade, tipo, fan_forn, data ) VALUES (:codproduto, :descricao, :quantidade, :tipo, :fan_forn, :data)";
 		
 		try{
 			$result = $conexao->prepare($insert);
@@ -36,7 +36,7 @@ jQuery(function($){
 			$result->bindParam(':descricao', $descricao, PDO::PARAM_STR);
 			$result->bindParam(':quantidade', $quantidade, PDO::PARAM_STR);
 			$result->bindParam(':tipo', $tipo, PDO::PARAM_STR);
-			$result->bindParam(':nomefornecedor', $nomefornecedor, PDO::PARAM_STR);
+			$result->bindParam(':fan_forn', $fan_forn, PDO::PARAM_STR);
 			$result->bindParam(':data', $data, PDO::PARAM_STR);
 			$result->execute();
 			$contar = $result->rowCount();
@@ -98,16 +98,16 @@ jQuery(function($){
 										<div class="control-group">											
 											<label class="control-label" for="email">Fornecedor</label>
 											<div class="controls">
-												<select class="span2" id="nomefornecedor" name="nomefornecedor">
+												<select class="span2" id="fan_forn" name="fan_forn">
 													<option></option>
 													<?php
 
-													$sql = "SELECT id, nomefornecedor from fornecedores ORDER BY id ASC";
+													$sql = "SELECT id, fan_forn from fornecedores ORDER BY id ASC";
 
 													$resultado = $conexao->query($sql);
 
 													while($dados = $resultado->fetch()){
-														echo "<option value=",$dados['nomefornecedor'],">", $dados['nomefornecedor'],"</option>";
+														echo "<option value=",$dados['fan_forn'],">", $dados['fan_forn'],"</option>";
 													}
 													?>
 												</select>

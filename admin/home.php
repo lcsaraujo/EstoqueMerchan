@@ -71,7 +71,15 @@
                     include("pages/edt-fornecedores.php");
                 }
 
+                // cadastrar pedidos
+                if($acao=='cad-pedidos') {
+                    include("pages/cad-pedidos.php");
 
+                }
+                // exibir pedidos
+                if($acao=='ver-pedidos') {
+                    include("pages/ver-pedidos.php");
+                }
 
             } else {
                 include("pages/inicio.php");

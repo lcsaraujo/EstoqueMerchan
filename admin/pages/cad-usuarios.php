@@ -1,8 +1,3 @@
-<script type="text/javascript">
-jQuery(function($){
-   $("#date").mask("99/99/9999",{placeholder:"dd/mm/yyyy"});
-});
-</script>
 <div class="main">
   <div class="main-inner">
     <div class="container">

@@ -117,7 +117,7 @@
 
 									if (isset($_POST['palavra-busca'])) {
 										$busca = addslashes($_POST['palavra-busca']);
-										$select = "SELECT * from fornecedores WHERE nomefornecedor LIKE '%$busca%' ORDER BY id DESC LIMIT $inicio, $quantidade";
+										$select = "SELECT * from fornecedores WHERE fan_forn LIKE '%$busca%' ORDER BY id DESC LIMIT $inicio, $quantidade";
 									} else {
 										$select = "SELECT * from fornecedores ORDER BY id DESC LIMIT $inicio, $quantidade";
 									}
@@ -134,7 +134,7 @@
 									?>
 												<tr class="border border-slate-600 text-center">
 													<td class="border border-slate-600"><?php echo $mostra->id; ?></td>
-													<td class="border border-slate-600"> <?php echo $mostra->nomefornecedor; ?> </td>
+													<td class="border border-slate-600"> <?php echo $mostra->fan_forn; ?> </td>
 													<td class="td-actions"><a href="home.php?acao=edt-fornecedores&id=<?php echo $mostra->id; ?>" class="btn w-5 btn-primary"><i class="fa fa-edit"> </i></a>
 														<a href="home.php?acao=ver-fornecedores&pg=<?php echo $pg; ?>&delete=<?php echo $mostra->id; ?>" class="btn btn-error w-5" onClick="return confirm('Deseja realmente excluir o fornecedor?')"><i class="fa fa-remove"> </i></a>
 													</td>
@@ -202,7 +202,7 @@
 						<?php
 						if (isset($_POST['palavra-busca'])) {
 							$busca = addslashes($_POST['palavra-busca']);
-							$sql = "SELECT * from fornecedores WHERE nomefornecedor LIKE '%$busca%'";
+							$sql = "SELECT * from fornecedores WHERE fan_forn LIKE '%$busca%'";
 						} else {
 							$sql = "SELECT * from fornecedores";
 						}

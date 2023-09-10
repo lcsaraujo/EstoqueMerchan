@@ -32,7 +32,7 @@ $contagem=1;
 			if($contar>0){
 				while($mostra = $result->FETCH(PDO::FETCH_OBJ)){
 					$idForn 		= $mostra->id;
-					$nomefornecedor = $mostra->nomefornecedor;
+					$fan_forn = $mostra->fan_forn;
 
 				}				
 			}else{
@@ -46,12 +46,12 @@ $contagem=1;
 			echo $e;
 		}		
 		if(isset($_POST['atualizar'])){
-			$nomefornecedor		= trim(strip_tags($_POST['nomefornecedor']));
-			$update = "UPDATE fornecedores SET nomefornecedor=:nomefornecedor WHERE id=:id";
+			$fan_forn		= trim(strip_tags($_POST['fan_forn']));
+			$update = "UPDATE fornecedores SET fan_forn=:fan_forn WHERE id=:id";
 		try{
 			$result = $conexao->prepare($update);
 			$result->bindParam(':id', $id, PDO::PARAM_INT);
-			$result->bindParam(':nomefornecedor', $nomefornecedor, PDO::PARAM_STR);
+			$result->bindParam(':fan_forn', $fan_forn, PDO::PARAM_STR);
 			$result->execute();
 			$contar = $result->rowCount();
 			if($contar>0){
@@ -76,7 +76,7 @@ $contagem=1;
 										<div class="control-group">											
 											<label class="control-label" for="username">Nome Fornecedor</label>
 											<div class="controls">
-												<input type="text" class="span6" id="nomefornecedor" value="<?php echo $nomefornecedor?>" name="nomefornecedor" required>
+												<input type="text" class="span6" id="fan_forn" value="<?php echo $fan_forn?>" name="fan_forn" required>
 											</div> <!-- /controls -->				
 										</div> <!-- /control-group -->                   
                         				<div class="form-actions">

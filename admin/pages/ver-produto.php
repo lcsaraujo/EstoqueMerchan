@@ -139,7 +139,7 @@
 													<td class="border border-slate-600"> <?php echo $mostra->quantidade; ?> </td>
 													<td class="border border-slate-600"> <?php echo $mostra->tipo; ?></td>
 													<td class="border border-slate-600"> <?php echo $mostra->data; ?> </td>
-													<td class="border border-slate-600"> <?php echo $mostra->nomefornecedor; ?> </td>
+													<td class="border border-slate-600"> <?php echo $mostra->fan_forn; ?> </td>
 													<?php
 													if ($nivelLogado == 1) { ?>
 														<td class="td-actions"><a href="home.php?acao=editar-produto&id=<?php echo $mostra->id; ?>" class="btn w-5 btn-primary"><i class="fa fa-edit"> </i></a>
