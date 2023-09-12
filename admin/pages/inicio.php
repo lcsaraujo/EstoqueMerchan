@@ -20,7 +20,7 @@ function saudacao($nomeLogado = '')
 
 
 <main>
-    <div class="container my-8 bg-base-100 p-6 w-100">
+    <div class="container my-4 bg-base-100 p-4 w-100">
         <span class="text-3xl font-sans font-semibold"><?php echo saudacao($nomeLogado) ?> :)</span>
     </div><!-- span 12 -->
 
@@ -76,11 +76,15 @@ function saudacao($nomeLogado = '')
     }
 
     ?>
+ 
+    <div class="w-100 h-full p-8 text-start">
+        <a type="button" class="w-20 md:w-40" href="home.php?acao=cad-produto"><img class=" transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 duration-300" src="img/box.png"><h3 class="text-xl font-sans font-semibold">Produtos</h3></a>
+        <a type="button" class="w-20 md:w-40" href="home.php?acao=cad-pedidos"><img class=" transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 duration-300" src="img/pedido.png"><h3 class="text-xl font-sans font-semibold">Pedidos</h3></a>
+        <a type="button" class="w-20 md:w-40" href="home.php?acao=cad-produto"><img class=" transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 duration-300" src="img/envio.png"><h3 class="text-xl font-sans font-semibold">Envios</h3></a>
+    </div>
 
 
-
-
-    <div class="font-semibold uppercase px-6 w-100">
+    <div class="font-semibold uppercase pt-20 px-6 w-100">
         <div class="inline text-center">
             <span class=""><i class="fa fa-list"></i> Últimos Produtos Cadastrados</span>
         </div>
@@ -131,8 +135,8 @@ function saudacao($nomeLogado = '')
                         echo $e;
                     }
                     ?>
-
-
                 </tbody>
             </table>
+
+            
 </main>

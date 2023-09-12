@@ -14,7 +14,7 @@ exit;
 
 <head>
 	<meta charset="utf-8">
-	<title>Login - CDE MERCHAN </title>
+	<title>Login - CDE</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<meta name="apple-mobile-web-app-capable" content="yes">
@@ -122,11 +122,11 @@ exit;
 						<span>Logado com sucesso!</span>
 			  </div>';
 
-						header("Refresh: 1, admin/home.php?acao=welcome");
+						header("Refresh: 2, admin/home.php?acao=welcome");
 					} else {
 						echo '
 				<div class="alert alert-error flex flex-auto justify-center mx-auto items-center w-80 py-2">
-					<svg xmlns="http://www.w3.org/2000/svg" class=" stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+					<i class="fa fa-error"></i>
 					<span>Erro! Usuario ou senha incorretos.</span>
 				</div';
 					}

@@ -39,7 +39,7 @@ try {
             $descricao 		= $mostra->descricao;
             $quantidade	 	= $mostra->quantidade;
             $tipo 			= $mostra->tipo;
-            $nomefornecedor = $mostra->nomefornecedor;
+            $fan_forn = $mostra->fan_forn;
         }
     } else {
         echo '<div class="alert alert-danger">
@@ -57,9 +57,9 @@ if(isset($_POST['atualizar'])) {
     $descricao 			= trim(strip_tags($_POST['descricao']));
     $quantidade 		= trim(strip_tags($_POST['quantidade']));
     $tipo 				= trim(strip_tags($_POST['tipo']));
-    $nomefornecedor		= trim(strip_tags($_POST['nomefornecedor']));
+    $fan_forn		= trim(strip_tags($_POST['fan_forn']));
     
-    $update = "UPDATE produtos SET codproduto=:codproduto, descricao=:descricao, quantidade=:quantidade, tipo=:tipo, nomefornecedor=:nomefornecedor WHERE id=:id";
+    $update = "UPDATE produtos SET codproduto=:codproduto, descricao=:descricao, quantidade=:quantidade, tipo=:tipo, fan_forn=:fan_forn WHERE id=:id";
     try {
         $result = $conexao->prepare($update);
         $result->bindParam(':id', $id, PDO::PARAM_INT);
@@ -67,7 +67,7 @@ if(isset($_POST['atualizar'])) {
         $result->bindParam(':descricao', $descricao, PDO::PARAM_STR);
         $result->bindParam(':quantidade', $quantidade, PDO::PARAM_INT);
         $result->bindParam(':tipo', $tipo, PDO::PARAM_STR);
-        $result->bindParam(':nomefornecedor', $nomefornecedor, PDO::PARAM_STR);
+        $result->bindParam(':fan_forn', $fan_forn, PDO::PARAM_STR);
         $result->execute();
         $contar = $result->rowCount();
         if($contar>0) {
@@ -130,15 +130,15 @@ if(isset($_POST['atualizar'])) {
 <div class="control-group">											
 <label class="control-label" for="email">Fornecedor</label>
 <div class="controls">
-<select class="span2" id="nomefornecedor" name="nomefornecedor" value="<?php echo $nomefornecedor?>">
-<option value="<?php echo $nomefornecedor?>"><?php echo $nomefornecedor?></option>
+<select class="span2" id="fan_forn" name="fan_forn" value="<?php echo $fan_forn?>">
+<option value="<?php echo $fan_forn?>"><?php echo $fan_forn?></option>
 <?php
-$sql = "SELECT id, nomefornecedor from fornecedores ORDER BY id ASC";
+$sql = "SELECT id, fan_forn from fornecedores ORDER BY id ASC";
 
 $resultado = $conexao->query($sql);
 
 while($dados = $resultado->fetch()) {
-    echo "<option value=",$dados['nomefornecedor'],">", $dados['nomefornecedor'],"</option>";
+    echo "<option value=",$dados['fan_forn'],">", $dados['fan_forn'],"</option>";
 }
 ?>
 </select>
