@@ -12,7 +12,7 @@ include("admin/conexao/conecta.php");
 
 <head>
 	<meta charset="utf-8">
-	<title>Login - CDE MERCHAN </title>
+	<title>Login - NoxusCDE </title>
 	<!-- <link href="https://cdn.jsdelivr.net/npm/daisyui@3.1.0/dist/full.css" rel="stylesheet" type="text/css" /> -->
 	<link rel="stylesheet" href="admin/css/style.css">
 	<link rel="stylesheet" href="admin/css/merchan.css">
@@ -35,8 +35,8 @@ include("admin/conexao/conecta.php");
 
 				<div class=" font-bold aliasing font-sans bg-clip-text text-indigo-500 pb-8">
 					<i class="fa fa-box-open"></i>
-					<h1 class="flex flex-auto items-center justify-center text-xl uppercase ">controle de</h1>
-					<h1 class="flex flex-auto items-center justify-center text-3xl uppercase ">estoque</h1>
+					<h1 class="flex flex-auto items-center justify-center text-xl uppercase ">Controle De Estoque</h1>
+					<h1 class="flex flex-auto items-center justify-center text-3xl uppercase ">Noxus</h1>
 
 				</div>
 

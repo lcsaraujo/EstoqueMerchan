@@ -9,7 +9,7 @@ jQuery(function($){
 <div class="  ">   
                 <div class="flex flex-wrap text-2xl">
 	      				<i class=" fa fa-file pe-5"></i>
-	      				<h3 class="justify-center text-2xl font-montserrat dark:text-white text-black">Cadastrar Produto</h3>
+	      				<h3 class="justify-center text-2xl font-montserrat">Cadastrar Brindes</h3>
 	  				</div> <!-- /widget-header -->
                      			
 	      			<div class="">	      				
@@ -58,32 +58,32 @@ jQuery(function($){
 									<div class="-mx-3">
 										
 										<div class="">											
-											<label class="text-white font-bold font-montserrat">Codigo do Produto</label>
-											<div class="controls pt-2">
-												<input type="text" class="w-40 rounded-sm text-black dark:bg-white bg-gray-400 border-indigo-400  focus:outline-none" id="codproduto" value="" name="codproduto" onChange="javascript:this.value=this.value.toUpperCase();">
+											<label class="font-montserrat font-bold">Codigo do Produto</label>
+											<div class="controls">
+												<input type="text" class="w-40 rounded-md bg-base-100 border-b-2 border-sky-400 hover:border-b-2 hover:border-indigo-800 focus:outline-none" id="codproduto" value="" name="codproduto" onChange="javascript:this.value=this.value.toUpperCase();">
 											</div> <!-- /controls -->				
 										</div> <!-- /flex-1 -->
 										
 										
 										<div class="py-5">											
-											<label class="text-white font-bold font-montserrat">Nome do Produto</label>
-											<div class="pt-2">
-												<input type="text" class="w-96 rounded-sm text-black dark:bg-white bg-gray-400 border-indigo-400  focus:outline-none" id="nomeproduto" value="" name="descricao" onChange="javascript:this.value=this.value.toUpperCase();">
+											<label class="font-bold font-montserrat">Nome do Produto</label>
+											<div class="controls">
+												<input type="text" class="w-96 rounded-md bg-base-100 border-b-2 border-sky-400 hover:border-b-2 hover:border-indigo-800 focus:outline-none" id="nomeproduto" value="" name="descricao" onChange="javascript:this.value=this.value.toUpperCase();">
 											</div> <!-- /controls -->				
 										</div> <!-- /flex-1 -->
 										
 										<div class="">											
-											<label class="text-white font-bold font-montserrat" for="username">Quantidade</label>
-											<div class="controls pt-2">
-												<input type="text" class="w-40 rounded-sm text-black dark:bg-white bg-gray-400 border-indigo-400  focus:outline-none" id="quantidade" value="" name="quantidade">
+											<label class="font-bold font-montserrat" for="username">Quantidade</label>
+											<div class="controls">
+												<input type="text" class="w-40 rounded-md bg-base-100 border-b-2 border-sky-400 hover:border-b-2 hover:border-indigo-800 focus:outline-none" id="quantidade" value="" name="quantidade">
 											</div> <!-- /controls -->				
 										</div> <!-- /flex-1 -->
                                         
                                         
                                         <div class="py-5 ">											
-											<label class="text-white font-bold font-montserrat" for="username">Tipo</label>
-											<div id="tipo" class="justify-center pt-2">
-												<input type="text" value="Material" id="tipo" class="block w-20 rounded-sm text-black dark:bg-white bg-gray-400 border-indigo-400  focus:outline-none" name="tipo"></input>
+											<label class="font-bold font-montserrat" for="username">Tipo</label>
+											<div id="tipo" class="justify-center">
+												<input type="text" value="Material" id="tipo" class="w-20 rounded-md bg-base-100 border-b-2 border-sky-400 hover:border-b-2 hover:border-indigo-800 focus:outline-none" name="tipo"></input>
 
 
 												<div class="valor-tipo">
@@ -95,9 +95,9 @@ jQuery(function($){
 										
 										
 										<div class="">											
-											<label class="text-white font-bold font-montserrat" for="email">Fornecedor</label>
-											<div class="controls pt-2">
-												<select class="w-60 rounded-sm text-black dark:bg-white bg-gray-400 border-indigo-400  focus:outline-none" id="fan_forn" name="fan_forn">
+											<label class="font-bold font-montserrat" for="email">Fornecedor</label>
+											<div class="controls">
+												<select class="w-60 rounded-md bg-base-100 border-b-2 border-sky-400 hover:border-b-2 hover:border-indigo-800 focus:outline-none" id="fan_forn" name="fan_forn">
 													<option></option>
 													<?php
 
@@ -113,10 +113,22 @@ jQuery(function($){
 											</div> <!-- /controls -->				
 										</div> <!-- /flex-1 -->
 
+                                        <div class="pt-5">
+											<label class="font-montserrat font-bold">Imagem do Brinde</label>
+                                            <div>
+												<input type="file" class="block w-full text-sm text-slate-500
+      file:mr-4 file:py-2 file:px-4
+      file:rounded-md file:border-0
+      file:text-sm file:font-semibold
+      file:bg-base-200 file:text-sky-500
+      hover:file:bg-base-100">
+                                            </div>
+                                        </div>
+
 										<div class="py-5">											
-											<label class="text-white font-bold font-montserrat">Data</label>
-											<div class="controls pt-2">
-												<input type="data" name="data" class="w-40 rounded-sm text-black dark:bg-white bg-gray-400 border-indigo-400  focus:outline-none" id="date" value="<?php $data = date("d/m/Y"); echo "$data"; ?>" name="data">
+											<label class="font-bold">Data</label>
+											<div class="controls">
+												<input type="data" name="data" class="w-40 rounded-md bg-base-100 border-b-2 border-sky-400 hover:border-b-2 hover:border-indigo-800 focus:outline-none" id="date" value="<?php $data = date("d/m/Y"); echo "$data"; ?>" name="data">
 											</div> <!-- /controls -->				
 										</div> <!-- /flex-1 -->
 										

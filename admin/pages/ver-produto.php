@@ -32,10 +32,9 @@
 									$result->execute();
 									$contar = $result->rowCount();
 									if ($contar > 0) {
-										echo '<div class="alert alert-success">
-                      <button type="button" class="close" data-dismiss="alert">×</button>
-                      <strong>Sucesso!</strong> O produto foi excluído.
-                </div>';
+										echo '<script>
+												toastsucesso().showToast();
+										</script>';
 									} else {
 										echo '<div class="alert alert-danger">
                       <button type="button" class="close" data-dismiss="alert">×</button>
@@ -57,10 +56,13 @@
 
 
 
-				<div class="font-semibold uppercase px-4 w-100">
+				<div class="font-semibold uppercase px-4 w-full">
 					<div class="widget widget-table action-table ">
-						<div class="w-100 h-100 join items-center flex flex-row"> <i class="fa fa-list p-4"></i><h3 class="text-xl">Visualizar Produtos</h3>
+						<div class="w-100 h-100 join items-center flex flex-row"> <i class="fa fa-list p-4"></i><h3 class="text-xl">Visualizar Materiais</h3>
 						
+						</div>
+						<div class="flex flex-1 align-middle items-center">
+							<a class="btn-sm btn-success rounded-md " href="home.php?acao=cad-produto">Novo Material</a>
 						</div>
 						<form action="home.php?acao=ver-produto" method="post" enctype="multipart/form-data" class=" col-end-3 p-0 m-0 w-100 text-center sm:text-end">
 							<input type="search" class="focus:outline-none input-sm  border-s-2 border-y-2 pe-0 rounded-s-xl border-indigo-500 join-item " style="line-height: 0;" name="palavra-busca" placeholder="Pesquisar..."><button class="btn-sm btn-primary join-item rounded-e-xl ">Procurar</button>
@@ -143,7 +145,7 @@
 													<?php
 													if ($nivelLogado == 1) { ?>
 														<td class="td-actions"><a href="home.php?acao=editar-produto&id=<?php echo $mostra->id; ?>" class="btn w-5 btn-primary"><i class="fa fa-edit"> </i></a>
-															<a href="home.php?delete=<?php echo $mostra->id; ?>" class="btn btn-error w-5" onClick="return confirm('Deseja realmente excluir o post?')"><i class="fa fa-remove"> </i></a>
+															<a href="home.php?acao=ver-produto&delete=<?php echo $mostra->id; ?>" class="btn btn-error w-5" onClick="return confirm('Deseja realmente excluir o post?')"><i class="fa fa-remove"> </i></a>
 														</td>
 													<?php } ?>
 												</tr>

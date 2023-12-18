@@ -1,3 +1,9 @@
+</div>
+            </div>
+        </main>
+    </div>
+</div>
+
 <footer class="footer footer-center p-4 bg-base-300 text-base-content fixed bottom-0 right-0 content-end">
       <div class="col-md-12 text-center">
         <span class="copyright">

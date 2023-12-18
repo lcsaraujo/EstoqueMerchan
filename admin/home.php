@@ -1,7 +1,7 @@
 <?php include("includes/header.php");?>
 <?php include("includes/topo.php");?>
 </head>
-<body >
+<body class="w-screen h-screen">
 
 
 <main>
@@ -50,10 +50,14 @@
                 }
 
                 //cadastrar usuario
-                if($acao=='cad-usuarios.php') {
+                if($acao=='cad-usuarios') {
                     include("pages/cad-usuarios.php");
                 }
 
+                //cadastrar brindes
+                if ($acao=='cad-brindes') {
+                    include("pages/cad-brindes.php");
+                }
 
 
                 //cadastrar fornecedores

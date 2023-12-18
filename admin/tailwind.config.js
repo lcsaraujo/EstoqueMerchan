@@ -2,7 +2,12 @@
 module.exports = {
   content: [],
   theme: {
-    extend: {},
+    
+    extend: {
+      fontFamily: {
+        'montserrat': ['Montserrat'],
+      }
+    },
   },
   plugins: [require("daisyui")],
 }

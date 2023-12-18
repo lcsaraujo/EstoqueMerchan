@@ -8,6 +8,7 @@ if (!isset($_SESSION['usuariowva']) && (!isset($_SESSION['senhawva']))) {
 include("conexao/conecta.php");
 include("includes/logout.php");
 
+
 $usuarioLogado = $_SESSION['usuariowva'];
 $senhaLogado = $_SESSION['senhawva'];
 
@@ -33,6 +34,9 @@ try {
     echo $erro;
 }
 
+
+$pgTopo = 'Dashboard';
+
 ?>
 
 <!DOCTYPE html>
@@ -40,17 +44,17 @@ try {
 
 <head>
     <meta charset="utf-8">
-    <title>CDE - Dashboard</title>
+    <title>Noxus - <?php echo $pgTopo?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <!-- CSS -->
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <!-- <link href="https://cdn.jsdelivr.net/npm/daisyui@3.1.0/dist/full.css" rel="stylesheet" type="text/css" /> -->
     <link href="css/output.css" rel="stylesheet">
     <link href="css/merchan.css" rel="stylesheet">
     <link href="fontawesome/css/all.css" rel="stylesheet">
     <link href="node_modules/daisyui/dist/full.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto&display=swap" rel="stylesheet">
 
     <!-- JS -->
     <script src="js/style.js"></script>
@@ -58,6 +62,8 @@ try {
     <!-- <script src="https://kit.fontawesome.com/6f555f06ed.js" crossorigin="anonymous"></script> -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
+    <script src="../node_modules/toastify-js/src/toastify.js"></script>
+    <script src="../functions/toast.js"></script>
 
 </head>
 <header>
@@ -71,8 +77,17 @@ try {
                                                                                     } ?></a>
         </div>
 
-        <div class="navbar-end h-3 pe-4 ps-8">
+        <div class="navbar-end  h-3 pe-4 ps-8">
             <?php if ($nivelLogado == 1) { ?>
+                <div class="">
+                    <button type="button" class="flex items-center justify-between w-full px-4 py-3 text-sm font-medium text-gray-900 transition-all duration-200 rounded-lg hover:bg-gray-100">
+                        <img class="flex-shrink-0 object-cover w-6 h-6 mr-3 rounded-full" src="https://landingfoliocom.imgix.net/store/collection/clarity-dashboard/images/vertical-menu/2/avatar-male.png" alt="" />
+                        <?php echo $usuarioLogado ?>
+                        <svg class="w-5 h-5 ml-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8 9l4-4 4 4m0 6l-4 4-4-4" />
+                        </svg>
+                    </button>
+                </div>
                 <div class="dropdown dropdown-end p-6">
 
                     <label tabindex="0" class="p-2">
@@ -81,8 +96,11 @@ try {
 
                     <ul class="menu menu-sm dropdown-content shadow bg-base-100 rounded-box w-100 " style="z-index: 1;" tabindex="0">
                         <li class="px-20 invisible"></li>
-                        <li class="w-100"><a class="text-xs w-100 inline" href="home.php?acao=cad-produto">Entrada Mercadorias</a></li>
-                        <li class="w-100"><a class="text-xs w-100 inline" href="home.php?acao=cad-pedidos">Saída Mercadorias</a></li>
+                        <li class="w-100"><a class="text-xs w-100 inline" href="home.php?acao=cad-produto">Entrada Materiais</a></li>
+                        <li class="w-100"><a class="text-xs w-100 inline" href="home.php?acao=cad-pedidos">Saída Materiais</a></li>
+                        <li class=" "></li>
+                        <li class="w-100"><a class="text-xs w-100 inline" href="home.php?acao=cad-brindes">Entrada Brindes</a></li>
+                        <li class="w-100"><a class="text-xs w-100 inline" href="home.php?acao=cad-brindes">Saída Brindes</a></li>
                         <li class=" "></li>
                         <li class="w-100 "><a class="text-xs w-100 inline" href="home.php?acao=cad-usuarios">Cadastrar Usuários</a></li>
                         <li class="w-100"><a class="text-xs w-100 inline" href="home.php?acao=cad-fornecedores">Cadastrar Fornecedores</a></li>
